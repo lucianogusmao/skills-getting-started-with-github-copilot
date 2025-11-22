@@ -157,14 +157,18 @@ footer {
   font-size: 14px;
 }
 
-.activity-card .participants ul {
-  list-style: disc inside;
+/* remove default bullets and provide a consistent participants list */
+.activity-card .participants ul,
+.activity-card .participants .participants-list {
+  list-style: none;
   padding-left: 0;
   margin: 0;
-  display: block;
 }
 
-.activity-card .participants li {
+.activity-card .participants .participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: linear-gradient(180deg, #ffffff, #fbfbff);
   border: 1px solid #efefef;
   padding: 8px 10px;
@@ -173,6 +177,28 @@ footer {
   font-size: 14px;
   color: #333;
   box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+.activity-card .participants .participant-email {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.participant-remove {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 6px;
+  border-radius: 4px;
+  color: #b71c1c;
+}
+
+.participant-remove:hover {
+  background: rgba(183,28,28,0.06);
 }
 
 /* Empty state styling */
